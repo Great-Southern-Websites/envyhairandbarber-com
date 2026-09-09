@@ -6,26 +6,26 @@
    ========================================================================== */
 :root {
   color-scheme: light;
-  --primary: #155EEF;
-  --primary-deep: #00359E;
-  --accent: #188BF6;
-  --accent-ink: #0B1A33;
+  --primary: #000000;
+  --primary-deep: #3A393E;
+  --accent: #77767B;
+  --accent-ink: #000000;
   --bg: #FFFFFF;
-  --bg-alt: #EFF4FF;
+  --bg-alt: #F3F3F4;
   --bg-card: #FFFFFF;
-  --fg: #16202B;
-  --fg-muted: #5C6B7A;
-  --line: #D9E0E7;
+  --fg: #000000;
+  --fg-muted: #5C5B60;
+  --line: #DADADC;
   --on-primary: #FFFFFF;
-  --shadow: 0 10px 30px rgba(0, 53, 158, 0.10);
-  --hero-bg: linear-gradient(135deg, #00359E 0%, #155EEF 70%, #188BF6 100%);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+  --hero-bg: linear-gradient(135deg, #000000 0%, #1C1C1F 70%, #2E2D31 100%);
   --hero-fg: #FFFFFF;
-  --footer-bg: #00359E;
+  --footer-bg: #000000;
   --footer-fg: #FFFFFF;
   --logo-tile: transparent;
   /* Code blocks and syntax colours (highlight.js classes map onto these). */
-  --code-bg: #EFF4FF;
-  --code-fg: #16202B;
+  --code-bg: #F3F3F4;
+  --code-fg: #000000;
   --hl-comment: #6A737D;
   --hl-keyword: #A626A4;
   --hl-string: #1B7F3B;
@@ -42,21 +42,25 @@
 @media (prefers-color-scheme: dark) {
 :root:not([data-theme="light"]) {
   color-scheme: dark;
-  --primary: #5E9BFF;
-  --primary-deep: #84ADFF;
-  --bg: #0F151D;
-  --bg-alt: #151D28;
-  --bg-card: #1A2533;
-  --fg: #EEF2F6;
-  --fg-muted: #A9B6C4;
-  --line: #2B3949;
-  --on-primary: #0F151D;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --footer-bg: #0B1017;
-  --footer-fg: #EEF2F6;
+  --primary: #FFFFFF;
+  --primary-deep: #C9C8CD;
+  --accent: #77767B;
+  --accent-ink: #000000;
+  --bg: #0F0F10;
+  --bg-alt: #171719;
+  --bg-card: #1D1D20;
+  --fg: #FFFFFF;
+  --fg-muted: #ABAAAF;
+  --line: #3A393E;
+  --on-primary: #000000;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --hero-bg: linear-gradient(135deg, #000000 0%, #1C1C1F 70%, #2E2D31 100%);
+  --hero-fg: #FFFFFF;
+  --footer-bg: #000000;
+  --footer-fg: #FFFFFF;
   --logo-tile: #FFFFFF;
-  --code-bg: #0B1017;
-  --code-fg: #E6EBF0;
+  --code-bg: #000000;
+  --code-fg: #F0F0F2;
   --hl-comment: #8B949E;
   --hl-keyword: #D2A8FF;
   --hl-string: #7EE787;
@@ -68,21 +72,25 @@
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --primary: #5E9BFF;
-  --primary-deep: #84ADFF;
-  --bg: #0F151D;
-  --bg-alt: #151D28;
-  --bg-card: #1A2533;
-  --fg: #EEF2F6;
-  --fg-muted: #A9B6C4;
-  --line: #2B3949;
-  --on-primary: #0F151D;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  --footer-bg: #0B1017;
-  --footer-fg: #EEF2F6;
+  --primary: #FFFFFF;
+  --primary-deep: #C9C8CD;
+  --accent: #77767B;
+  --accent-ink: #000000;
+  --bg: #0F0F10;
+  --bg-alt: #171719;
+  --bg-card: #1D1D20;
+  --fg: #FFFFFF;
+  --fg-muted: #ABAAAF;
+  --line: #3A393E;
+  --on-primary: #000000;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  --hero-bg: linear-gradient(135deg, #000000 0%, #1C1C1F 70%, #2E2D31 100%);
+  --hero-fg: #FFFFFF;
+  --footer-bg: #000000;
+  --footer-fg: #FFFFFF;
   --logo-tile: #FFFFFF;
-  --code-bg: #0B1017;
-  --code-fg: #E6EBF0;
+  --code-bg: #000000;
+  --code-fg: #F0F0F2;
   --hl-comment: #8B949E;
   --hl-keyword: #D2A8FF;
   --hl-string: #7EE787;
@@ -214,10 +222,10 @@ p { margin: 0 0 1rem; }
 .hero .lead { margin-inline: auto; }
 .hero-actions { justify-content: center; }
 .hero-actions.start { justify-content: flex-start; }
-.hero .btn-primary { background: #FFFFFF; color: #00359E; }
-.hero .btn-primary:hover { background: #EFF4FF; color: #00359E; }
-.hero-actions .btn-outline { border-color: rgba(255, 255, 255, 0.85); color: #FFFFFF; }
-.hero-actions .btn-outline:hover { background: #FFFFFF; color: #00359E; }
+.hero .btn-primary { background: #FFFFFF; color: #000000; }
+.hero .btn-primary:hover { background: #F3F3F4; color: #000000; }
+.hero .btn-outline, .cta-band .btn-outline { border-color: rgba(255, 255, 255, 0.85); color: #FFFFFF; }
+.hero .btn-outline:hover, .cta-band .btn-outline:hover { background: #FFFFFF; color: #000000; }
 .section-head { max-width: 42rem; margin-bottom: 2rem; }
 .section-head .lead { margin-bottom: 0; }
 .service-list { list-style: none; margin: 0; padding: 0; }
@@ -232,8 +240,8 @@ p { margin: 0 0 1rem; }
 .cta-band { background: var(--hero-bg); color: var(--hero-fg); text-align: center; padding-block: clamp(2.5rem, 7vw, 4.5rem); }
 .cta-band h2, .cta-band p { color: inherit; }
 .cta-band .lead { margin-inline: auto; opacity: 0.92; }
-.cta-band .btn-primary { background: #FFFFFF; color: #00359E; }
-.cta-band .btn-primary:hover { background: #EFF4FF; color: #00359E; }
+.cta-band .btn-primary { background: #FFFFFF; color: #000000; }
+.cta-band .btn-primary:hover { background: #F3F3F4; color: #000000; }
 .contact-list strong { display: block; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--fg-muted); }
 .contact-list a { overflow-wrap: anywhere; }
 .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
