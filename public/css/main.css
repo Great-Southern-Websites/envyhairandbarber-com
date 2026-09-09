@@ -58,7 +58,7 @@
   --hero-fg: #FFFFFF;
   --footer-bg: #000000;
   --footer-fg: #FFFFFF;
-  --logo-tile: #FFFFFF;
+  --logo-tile: transparent;
   --code-bg: #000000;
   --code-fg: #F0F0F2;
   --hl-comment: #8B949E;
@@ -88,7 +88,7 @@
   --hero-fg: #FFFFFF;
   --footer-bg: #000000;
   --footer-fg: #FFFFFF;
-  --logo-tile: #FFFFFF;
+  --logo-tile: transparent;
   --code-bg: #000000;
   --code-fg: #F0F0F2;
   --hl-comment: #8B949E;
@@ -141,6 +141,13 @@ p { margin: 0 0 1rem; }
 .bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4.25rem; position: relative; }
 .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--fg); font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; }
 .brand img { height: 3.1rem; width: auto; background: var(--logo-tile); border-radius: 8px; padding: 2px; }
+.brand .logo-on-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand .logo-on-light { display: none; }
+  :root:not([data-theme="light"]) .brand .logo-on-dark { display: block; }
+}
+:root[data-theme="dark"] .brand .logo-on-light { display: none; }
+:root[data-theme="dark"] .brand .logo-on-dark { display: block; }
 .nav-toggle-input { position: absolute; opacity: 0; width: 0; height: 0; }
 .nav-toggle { display: flex; align-items: center; justify-content: center; width: 2.9rem; height: 2.9rem; border-radius: 10px; border: 1px solid var(--line); cursor: pointer; }
 .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after { display: block; width: 1.3rem; height: 2px; background: var(--fg); position: relative; transition: transform 0.2s; content: ""; }
@@ -217,7 +224,7 @@ p { margin: 0 0 1rem; }
 
 /* ---- site specific ------------------------------------------------------- */
 .hero-tag { display: inline-block; font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.95rem; opacity: 0.9; margin-bottom: 0.75rem; }
-.hero-logo { width: min(11rem, 40vw); margin: 0 auto 1.5rem; background: #FFFFFF; border-radius: 18px; padding: 0.75rem; box-shadow: var(--shadow); }
+.hero .hero-logo { width: min(11rem, 40vw); margin: 0 auto 1.5rem; background: transparent; border-radius: 0; box-shadow: none; }
 .hero .container { text-align: center; }
 .hero .lead { margin-inline: auto; }
 .hero-actions { justify-content: center; }
