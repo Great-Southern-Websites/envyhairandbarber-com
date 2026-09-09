@@ -7,3 +7,4 @@ BRIEF.md
 .vscode/
 .DS_Store
 node_modules/
+.playwright-mcp/

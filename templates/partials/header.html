@@ -2,15 +2,17 @@
 <header class="site-header">
   <div class="container bar">
     <a class="brand" href="{=site.url}">
-      <!-- BUILDER: replace with the logo image (public/images/logo.*) or a wordmark -->
+      <img src="{=site.url('images/logo.png')}" alt="Envy Hair &amp; Barber" width="549" height="724">
       <span class="brand-name">Envy Hair &amp; Barber</span>
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle menu">
     <label for="nav-toggle" class="nav-toggle"><span></span></label>
     <nav class="site-nav" aria-label="Main navigation">
       <ul>
-        <!-- BUILDER: one <li> per page, mirroring the original site's navigation -->
         <li><a href="{=site.url}">Home</a></li>
+        <li><a href="{=site.url('services')}">Services</a></li>
+        <li><a href="{=site.url('contact')}">Contact &amp; Bookings</a></li>
+        <li><a class="btn-book" href="tel:+61397876009">Call (03) 9787 6009</a></li>
       </ul>
     </nav>
   </div>
