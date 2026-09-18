@@ -1,88 +1,84 @@
 ---
 title: "Services"
-description: "Ladies cuts and restyles, regrowth tint, foils and toner, plus skin fades, buzz cuts and beard trims at our Frankston South salon."
+description: "Haircuts, colour, foils and toner, skin fades and beard trims, hair extensions, relaxing and consultations at Envy Hair & Barber, Frankston South."
 layout: default
 ---
-{@io.quarkiverse.roq.frontmatter.runtime.model.Site site}
 <section class="page-banner">
   <div class="container">
-    <p class="eyebrow">Frankston South</p>
-    <h1>Our services</h1>
-    <p class="lead">Hair, colour and barber services for women, men and kids. Call <a href="tel:+61397876009">(03) 9787 6009</a> for prices and bookings.</p>
+    <p class="eyebrow">Our services</p>
+    <h1>Services</h1>
+    <p class="lead">Hair, colour and barbering in one shop in Frankston South. Call (03) 9787 6009 to ask about a price or to book a time.</p>
   </div>
 </section>
 
-<section class="section">
+<section class="board on-ink">
   <div class="container">
-    <div class="card-grid">
-      <article class="card" id="hair">
-        <h2>Hair services</h2>
-        <ul class="service-list">
+    <div class="board-grid">
+      <div class="board-menu">
+        <h3>Haircuts</h3>
+        <ul>
           <li>Short hair</li>
           <li>Medium hair</li>
           <li>Long hair</li>
           <li>Restyle / students</li>
         </ul>
-      </article>
-      <article class="card" id="colour">
-        <h2>Colour services</h2>
-        <ul class="service-list">
+      </div>
+      <div class="board-menu">
+        <h3>Colour services</h3>
+        <ul>
           <li>Regrowth tint</li>
           <li>All over colour</li>
-          <li>Half head foils</li>
+          <li>1/2 head foils</li>
           <li>Full head foils</li>
           <li>T-section</li>
           <li>Toner</li>
         </ul>
-      </article>
-      <article class="card" id="barber">
-        <h2>Mens &amp; barber</h2>
-        <ul class="service-list">
+      </div>
+      <div class="board-menu">
+        <h3>Mens &amp; barber</h3>
+        <ul>
           <li>Skin fades</li>
           <li>Standard cut</li>
           <li>Buzz cuts</li>
           <li>Beard trim</li>
           <li>Primary school</li>
         </ul>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section-alt" id="more">
-  <div class="container">
-    <div class="section-head">
-      <h2>Also available</h2>
-      <p class="lead">Ask about these when you call or book.</p>
-    </div>
-    <div class="feature-grid">
-      <div class="feature">
-        <h3>Custom hair treatment</h3>
-        <p>From deep conditioning to keratin treatments, using high-quality products.</p>
-      </div>
-      <div class="feature">
-        <h3>Hair extensions</h3>
-        <p>Ask about extensions when you book.</p>
-      </div>
-      <div class="feature">
-        <h3>Hair relaxing</h3>
-        <p>Ask about relaxing treatments when you book.</p>
-      </div>
-      <div class="feature">
-        <h3>Hair health consultations</h3>
-        <p>A chat about the condition of your hair and what will help it.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band">
+<section class="section">
   <div class="container">
-    <h2>Book your appointment</h2>
-    <p class="lead">No rush jobs, quality service and relaxed vibes but serious hair.</p>
-    <p class="hero-actions">
+    <div class="service-groups">
+      <div class="service-group" id="custom-hair-treatment">
+        <h2>Custom hair treatment</h2>
+        <p>From deep conditioning to keratin treatments, we use high-quality products to keep your hair healthy, strong and shining. We match the treatment to your hair after a look at its condition.</p>
+      </div>
+      <div class="service-group" id="colour-services">
+        <h2>Colour services</h2>
+        <p>Regrowth tints, all over colour, half and full head foils, T-section foils and toner.</p>
+      </div>
+      <div class="service-group" id="mens-and-barber">
+        <h2>Mens &amp; barber</h2>
+        <p>Sharp fades, standard cuts, buzz cuts and beard trims, plus cuts for primary school kids.</p>
+      </div>
+      <div class="service-group" id="hair-extensions">
+        <h2>Hair extensions</h2>
+        <p>Length and volume added to your own hair. Call the shop to talk through what would suit you.</p>
+      </div>
+      <div class="service-group" id="hair-relaxing">
+        <h2>Hair relaxing</h2>
+        <p>Smoothing for curly or textured hair. Ask us about it when you call or book.</p>
+      </div>
+      <div class="service-group" id="hair-health-consultations">
+        <h2>Hair health consultations</h2>
+        <p>Every client is different. We offer personalised consultations to match your style, texture and lifestyle, and to work out which cut, colour or treatment suits you.</p>
+      </div>
+    </div>
+    <div class="actions">
       <a class="btn btn-primary" href="tel:+61397876009">Call (03) 9787 6009</a>
-      <a class="btn btn-outline" href="{=site.url('contact')}">Contact &amp; bookings</a>
-    </p>
+      <a class="btn btn-outline" href="{=site.url('contact')}">Request an appointment</a>
+    </div>
   </div>
 </section>

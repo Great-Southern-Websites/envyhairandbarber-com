@@ -21,7 +21,10 @@ This is a Quarkus Roq static site. Keep it that way.
   links, booking action); keep it accurate and valid whenever those details change.
   `content/sitemap.xml` is generated and `public/robots.txt` is written by the elf (it
   carries the site's address); a page can opt out of the sitemap with `sitemap: false`
-  in its front matter (the 404 page does).
+  in its front matter (the 404 page does). `content/404.html` also carries
+  `link: /404.html`, which publishes it to the root as GitHub Pages requires;
+  without it Roq writes `404/index.html`, which GitHub never serves. Keep both
+  keys if you touch that page.
 - Site settings are the front matter of `content/index.html` (Roq's "site data"): its
   `title` is the site title (the business name; it names the RSS feed and llms.txt too)
   and its `description` the site description. Two optional keys the layout reads:
@@ -56,8 +59,22 @@ This is a Quarkus Roq static site. Keep it that way.
   each old path. When a page moves, add its old path to its aliases; when content merges,
   the surviving page carries every old path.
 - Brand colours are CSS custom properties at the top of `main.css`. Dark theme tokens
-  live in the two `data-theme` blocks; if the site has no dark theme, both blocks and the
-  `theme-toggle` partial are gone.
+  live in the two `data-theme` blocks. Sites built since September 2026 always keep both
+  themes and the `theme-toggle` partial; an older site without a dark theme has neither. The token names are a contract: the contact form and
+  comments partials use `--line`, `--bg-card`, `--bg-alt`, `--fg`, `--fg-muted`,
+  `--accent` and `--radius`, so change what a token is worth, never its name. The rules
+  below the tokens are this site's own design and can be rewritten; keep `.skip-link`,
+  `.container` and the `.logo-light`/`.logo-dark` swap, which the layouts and partials
+  depend on.
+- Photo viewer: `web/lightbox/` is its own bundle, loaded on every page by the default
+  layout (`{#bundle key="lightbox" tag="script" /}`). A photo in the page content opens
+  large with previous and next. Never edit `web/lightbox/` and never remove that line;
+  the elf owns them. A photo's `alt` (or its `<figcaption>`) is the description shown
+  under it; `data-no-zoom` keeps an image from opening. Do not add another gallery popup.
+- Web fonts never block the page. Google Fonts load with `rel="preload" as="style"` and
+  `onload="this.onload=null;this.rel='stylesheet'"`, a `<noscript>` stylesheet beside it,
+  `&display=swap` on the address, and a system fallback in the font tokens. A plain
+  `<link rel="stylesheet">` to fonts.googleapis.com holds up the whole page on a phone.
 - Verify before you finish: `QUARKUS_HTTP_PORT=8765 QUARKUS_ROQ_GENERATOR_BATCH=true mvn -q -B package quarkus:run`
   must succeed and `target/roq/index.html` must exist.
 - Do not add build tooling (npm, bundlers), server code, or third-party scripts beyond

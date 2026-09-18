@@ -16,17 +16,19 @@
   {#ga4 tag=site.data.getJsonObject('analytics').getString("ga4", "") /}
   {/if}
   <link rel="icon" href="{=site.url('favicon.png')}" type="image/png">
-  <link rel="apple-touch-icon" href="{=site.url('favicon.png')}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap">
   <script>{|
     try {
       var t = localStorage.getItem('site-theme');
       if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
     } catch (e) { /* private mode: follow the OS preference */ }
   |}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Oswald:wght@500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="{=site.url('css/main.css')}">
+  {! The photo viewer (web/lightbox/): a photo in the page opens large. Leave it in. !}
+  {#bundle key="lightbox" tag="script" /}
   {#include partials/structured-data /}
   {#insert head /}
 </head>

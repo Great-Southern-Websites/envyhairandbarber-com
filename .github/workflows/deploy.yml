@@ -16,6 +16,13 @@ concurrency:
 
 jobs:
   build:
+    # The Roq action reads the site address from the Pages settings. A public
+    # repository's settings are readable by anyone; a private one (a prospect's
+    # preview) needs pages: read, and without it the action reports that Pages
+    # is not enabled.
+    permissions:
+      contents: read
+      pages: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
